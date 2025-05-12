@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My assignement</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="assignement6.css">
+        
+        <meta lang="en">
+    </head>
+    <body background="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80"> 
+        <h1 style="color: brown;">assignement 6 </h1>
+         <div>
+           <div id="MOse" class="container">Musa</div>
+           <p>MY name is MOse</p>
+           <p>I am a Kenyan</p>
+         </div>
+         <button id="btn">click me</button>
+            <p id="hovertext">😎</p>
+            <script>
+            const btn = document.getElementById("btn");
+            const text = document.getElementById("hovertext");
+             btn.onclick = function() {
+                alert("Hello, Musa!");
+                text.style.color = "blue";
+                text.style.fontSize = "30px";
+             }
+             text.onmouseover = function() {  
+                text.style.color = "red";
+                text.style.fontSize = "30px";
+                text.style.fontWeight = "bold";
+             };
+                text.onmouseout = function() {
+                    textContent = "😎";  
+                    text.style.color = "black";
+                    text.style.fontSize = "20px";
+                    text.style.fontWeight = "normal";
+                };
+                
+            </script>
+            <form id="musa">
+                <label for="address"><address></address>:</label>
+                <input type="text" id="address" required>
+                <button type="submit">Submit</button>
+                <p id="errormessage" style="color: black;"></p>
+            </form>
+
+            <script>
+                const form = document.getElementById("musa");
+                const addressInput = document.getElementById("address");
+                const errorMessage = document.getElementById("errormessage"); 
+
+                form.onsubmit = function(e) {
+                    e.preventDefault(); // Prevent form submission
+                    const address = addressInput.value;
+
+                    if (address.trim() === "") {
+                        errorMessage.textContent = "Please enter a valid address.";
+                        errorMessage.style.color = "red";
+                    } else {
+                        errorMessage.textContent = "Address is valid.";
+                        errorMessage.style.color = "green";
+                    }
+                };
+            </script>
+            <button id="togglebutton">press</button>
+            <p id="toggleText">remember not to share ur password</p>
+            <script>
+                 const toggleButton = document.getElementById("togglebutton");
+                const toggleText = document.getElementById("toggleText");
+
+                toggleButton.onclick = function() {
+                    if (toggleText.style.display === "none") {
+                        toggleText.style.display = "block";
+                    } else {
+                        toggleText.style.display = "none";
+                    }
+                };
+            </script>
+            <div hovertext="hover over me" class="container">
+                <p>Hover over this text to see the effect.</p>
+                <script>
+                    const hoverText = document.getElementById('hovertext');
+                    hoverText.onmouseover = function() {
+                        hoverText.style.color = "green";
+                        hoverText.style.fontSize = "30px";
+                        hoverText.style.fontWeight = "bold";
+                    };
+                    hoverText.onmouseout = function() {
+                        hoverText.style.color = "black";
+                        hoverText.style.fontSize = "20px";
+                        hoverText.style.fontWeight = "normal";
+                    };
+                </script>
+
+            </div>
+          <button id="Mainbutton">Main</button>
+          <div id="Message"></div>
+            <script>
+                const button = document.getElementById("Mainbutton");
+                const message = document.getElementById("Message");
+                button.addEventListener('click',() =>{
+                    message.textcontent = "Welcome to my page";
+                    message.style.color = "blue";
+                })
+                document.addEventListener('dblclick', (event) => {
+                  message.textContent = "ola Musa";
+                    message.style.color = "green";       
+                });
+             document.addEventListener('timeout', (event) => {
+                  message.textContent = "wagwaan🌹🌹🌹";
+                    message.style.color = "blue";       
+                });
+           </script>
+            
+            <script src="assignement6.js"></script>
+    </body>
+</html>
